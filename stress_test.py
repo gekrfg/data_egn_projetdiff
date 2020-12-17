@@ -19,13 +19,14 @@ class FlaskTests(unittest.TestCase):
             "form_type": "analysis_sentence"
         }
         kaishi = time.time()
-        
+
         for i in range(count):
             responce = requests.post('http://localhost:5000', data=params)
             self.assertEqual(responce.status_code, 200)
         
         jieshu = time.time()
         t = jieshu - kaishi
+
         print("The 1000 requests took: {} seconds".format(t))
 
 
