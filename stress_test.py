@@ -14,7 +14,7 @@ class FlaskTests(unittest.TestCase):
         pass
 
     def test_stress(self):
-        count = 1000
+        count = 20
 
         params = {
             'sentence': "I'm feeling really good!",
