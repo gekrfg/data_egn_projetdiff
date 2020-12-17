@@ -13,19 +13,19 @@ class FlaskTests(unittest.TestCase):
         pass
 
     def test_stress(self):
-        n = 20
-        responses_urls = []
-
-        for i in range(n):
-            responses_urls.append(requests.get('http://localhost:5000'))
-
-        start = time.time()
-        end = time.time()
-        t = end - start
-
-        for i in range(n):
-            self.assertEqual(responses_urls[i].status_code, 200)
-
+        count = 20
+        params = {
+            'sentence': "I'm feeling really good!",
+            "form_type": "analysis_sentence"
+        }
+        kaishi = time.time()
+        
+        for i in range(count):
+            responce = requests.post('http://localhost:5000', data=params)
+            self.assertEqual(responce.status_code, 200)
+        
+        jieshu = time.time()
+        t = jieshu - kaishi
         print("The 1000 requests took: {} seconds".format(t))
 
 
