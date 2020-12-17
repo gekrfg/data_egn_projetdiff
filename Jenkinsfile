@@ -65,7 +65,7 @@ pipeline{
     stage('Docker images down'){
       steps{
         script{
-          if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'Release' ) {
+          if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'release' ) {
             input 'Stop the container'
             sh 'docker rm -f data-eng-proj2'
           }
