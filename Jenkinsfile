@@ -34,7 +34,8 @@ pipeline{
       steps{
         script{
 		  if (env.BRANCH_NAME == 'dev'){
-            bat 'python stress_test.py '
+			 bat 'pip install requests' 
+                         bat 'python stress_test.py '
             }
         }
       }
@@ -67,7 +68,7 @@ pipeline{
         script{
           if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'release' ) {
             input 'Stop the container'
-            sh 'docker rm -f data-eng-proj2'
+            bat 'docker rm -f data-eng-proj2'
           }
         }
       }
