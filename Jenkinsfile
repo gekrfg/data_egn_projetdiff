@@ -68,7 +68,7 @@ pipeline{
           if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'release' ) {
             
             bat 'docker rm -f data-eng-proj2'
-	    bat 'docker stop -t data-eng-proj2'
+	    bat 'docker stop -t=10 data-eng-proj2'
           }
         }
       }
