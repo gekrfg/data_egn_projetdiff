@@ -34,7 +34,8 @@ pipeline{
       steps{
         script{
 		  if (env.BRANCH_NAME == 'dev'){
-            bat 'python stress_test.py '
+			 bat 'pip install requests' 
+                         bat 'python stress_test.py '
             }
         }
       }
