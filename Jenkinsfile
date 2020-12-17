@@ -66,7 +66,7 @@ pipeline{
     stage('Docker images down'){
       steps{
         script{
-          if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'realease' ) {
+          if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'realease'||env.BRANCH_NAME == 'test' ) {
         
 	    bat 'docker stop -t=10 tweet-app'	  
             bat 'docker rm -f tweet-app'
