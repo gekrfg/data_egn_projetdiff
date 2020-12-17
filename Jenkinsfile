@@ -38,7 +38,7 @@ pipeline{
     stage('Intergration test'){
       steps{
         script{
-		  if (env.BRANCH_NAME == 'test'||env.BRANCH_NAME == 'test'){
+		  if (env.BRANCH_NAME == 'test'||env.BRANCH_NAME == 'dev'){
             bat 'python test.py '
             }
         }
