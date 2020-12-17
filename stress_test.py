@@ -22,7 +22,7 @@ class FlaskTests(unittest.TestCase):
 
         kaishi = time.time()
 
-        for i in range(1000):
+        for i in range(count):
             responce = requests.post('http://localhost:5000', data=params)
             self.assertEqual(responce.status_code, 200)
         
@@ -31,7 +31,7 @@ class FlaskTests(unittest.TestCase):
         t = jieshu - kaishi
 
 
-        print("The {} requests took: {} seconds".format(count, t))
+        print("The 1000 requests took: {} seconds".format(t))
 
 
 if __name__ == '__main__':
