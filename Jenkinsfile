@@ -20,15 +20,32 @@ pipeline{
 		}
       }
     }
+	  
     stage('Unittest'){
       steps{
         script{
 		  if (env.BRANCH_NAME == 'test'){
+            
+			  bat 'pip install pandas==1.1.1 -i https://pypi.douban.com/simple'  
+                          bat 'pip install numpy==1.18.1 -i https://pypi.douban.com/simple' 
+                          bat 'pip install flask'
+			  bat 'python unit.py '
+            }
+        }
+      }
+	}	  
+	  
+    stage('Intergration test'){
+      steps{
+        script{
+		  if (env.BRANCH_NAME == 'test'||env.BRANCH_NAME == 'dev'){
             bat 'python test.py '
             }
         }
       }
 	}
+    	  
+    
 	
 	stage('Stresstest'){
       steps{
