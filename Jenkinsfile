@@ -15,7 +15,7 @@ pipeline{
       steps{
 	    script{
 	        if (env.BRANCH_NAME == 'dev'||env.BRANCH_NAME == 'realease'){
-            bat 'docker -compose up -d 5000:5000 data-eng-proj2'
+            bat 'docker run -d -p 5000:5000 data-eng-proj2'
 			}
 		}
       }
@@ -57,6 +57,17 @@ pipeline{
         script{
           if (env.BRANCH_NAME == 'realease') {
             echo 'Merge'
+          }
+        }
+      }
+    }
+    
+    stage('Docker images down'){
+      steps{
+        script{
+          if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'release' ) {
+            input 'Stop the container'
+            sh 'docker rm -f data-eng-proj2'
           }
         }
       }
