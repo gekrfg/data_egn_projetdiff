@@ -34,7 +34,7 @@ pipeline{
       steps{
         script{
 		  if (env.BRANCH_NAME == 'dev'){
-            bat 'python3 stress_test.py '
+            bat 'python stress_test.py '
             }
         }
       }
