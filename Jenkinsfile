@@ -21,16 +21,6 @@ pipeline{
       }
     }
 	  
-    stage('Test'){
-      steps{
-        script{
-		  if (env.BRANCH_NAME == 'test'){
-            bat 'python test.py '
-            }
-        }
-      }
-	}
-    	  
     stage('Unittest'){
       steps{
         script{
@@ -43,7 +33,19 @@ pipeline{
             }
         }
       }
+	}	  
+	  
+    stage('Intergration test'){
+      steps{
+        script{
+		  if (env.BRANCH_NAME == 'test'||env.BRANCH_NAME == 'test'){
+            bat 'python test.py '
+            }
+        }
+      }
 	}
+    	  
+    
 	
 	stage('Stresstest'){
       steps{
