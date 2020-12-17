@@ -36,9 +36,9 @@ pipeline{
         script{
 		  if (env.BRANCH_NAME == 'test'){
             
-			  pip install pandas==1.1.1 -i https://pypi.douban.com/simple  
-                          pip install numpy==1.18.1 -i https://pypi.douban.com/simple 
-                          pip install flask 
+			  bat 'pip install pandas==1.1.1 -i https://pypi.douban.com/simple'  
+                          bat 'pip install numpy==1.18.1 -i https://pypi.douban.com/simple' 
+                          bat 'pip install flask'
 			  bat 'python unit.py '
             }
         }
