@@ -23,7 +23,7 @@ pipeline{
     stage('Unittest'){
       steps{
         script{
-		  if (env.BRANCH_NAME == 'dev'){
+		  if (env.BRANCH_NAME == 'test'){
             bat 'python test.py '
             }
         }
