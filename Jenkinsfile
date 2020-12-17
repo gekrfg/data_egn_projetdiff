@@ -15,7 +15,7 @@ pipeline{
       steps{
 	    script{
 	        if (env.BRANCH_NAME == 'dev'||env.BRANCH_NAME == 'realease'){
-            bat 'docker run -d -p 5000:5000 data-eng-proj2'
+            bat 'docker run -d -p 5000:5000 -it --name tweet-app data-eng-proj2'
 			}
 		}
       }
@@ -67,9 +67,9 @@ pipeline{
       steps{
         script{
           if (env.BRANCH_NAME == 'dev' || env.BRANCH_NAME == 'release' ) {
-            
-                  bat 'docker stop -t=10 data-eng-proj2'
-		  bat 'docker rm -f data-eng-proj2'
+        
+	    bat 'docker stop -t=10 tweet-app'	  
+            bat 'docker rm -f tweet-app'
 	    
           }
         }
