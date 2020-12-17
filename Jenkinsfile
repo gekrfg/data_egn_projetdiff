@@ -24,6 +24,7 @@ pipeline{
       steps{
         script{
 		  if (env.BRANCH_NAME == 'test'){
+	    bat 'python webapp.py '
             bat 'python test.py '
             }
         }
