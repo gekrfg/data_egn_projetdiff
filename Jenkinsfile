@@ -15,7 +15,7 @@ pipeline{
       steps{
 	    script{
 	        if (env.BRANCH_NAME == 'dev'||env.BRANCH_NAME == 'realease'){
-            bat 'docker run -d -p 5000:5000 -name data-eng-proj2 tweet-app'
+            bat 'docker run -d -p 5000:5000 -it --name data-eng-proj2 tweet-app'
 			}
 		}
       }
