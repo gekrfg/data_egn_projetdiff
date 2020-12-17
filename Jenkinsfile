@@ -20,11 +20,22 @@ pipeline{
 		}
       }
     }
-    stage('Unittest'){
+	  
+    stage('Test'){
       steps{
         script{
 		  if (env.BRANCH_NAME == 'test'){
             bat 'python test.py '
+            }
+        }
+      }
+	}
+    	  
+    stage('Unittest'){
+      steps{
+        script{
+		  if (env.BRANCH_NAME == 'test'){
+            bat 'python unit.py '
             }
         }
       }
