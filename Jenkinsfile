@@ -4,7 +4,7 @@ pipeline{
     stage('Build application'){
       steps{
 	    script{
-            if (env.BRANCH_NAME == 'dev'||env.BRANCH_NAME == 'realease'){
+            if (env.BRANCH_NAME == 'dev'||env.BRANCH_NAME == 'realease'||env.BRANCH_NAME == 'text'){
             bat 'docker build -t data-eng-proj2 .'
 			}
           }
@@ -14,7 +14,7 @@ pipeline{
     stage('Run image'){
       steps{
 	    script{
-	        if (env.BRANCH_NAME == 'dev'||env.BRANCH_NAME == 'realease'){
+	        if (env.BRANCH_NAME == 'dev'||env.BRANCH_NAME == 'realease'||env.BRANCH_NAME == 'text'){
             bat 'docker run -d -p 5000:5000 -it --name tweet-app data-eng-proj2'
 			}
 		}
