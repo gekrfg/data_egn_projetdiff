@@ -15,7 +15,7 @@ pipeline{
       steps{
 	    script{
 	        if (env.BRANCH_NAME == 'dev'||env.BRANCH_NAME == 'realease'){
-            bat 'docker run -p 5000:5000 data-eng-proj2'
+            bat 'docker -compose up 5000:5000 data-eng-proj2'
 			}
 		}
       }
