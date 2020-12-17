@@ -13,7 +13,7 @@ class FlaskTests(unittest.TestCase):
         pass
 
     def test_stress(self):
-        n = 20
+        n = 150
         responses_urls = []
 
         for i in range(n):
