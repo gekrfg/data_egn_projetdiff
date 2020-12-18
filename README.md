@@ -31,6 +31,10 @@ Run the stress tests:
 ```
 python stress_test.py
 ```
+
 ## Link to Trello
 [https://trello.com/b/GBY14s2p/engineeringproject](https://trello.com/b/GBY14s2p/engineeringproject)
+
+## Machine Learning Version
+[https://github.com/gekrfg/data_egn_projet2](https://github.com/gekrfg/data_egn_projet2)
 
